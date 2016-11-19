@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016. The League of Amazing Programmers, All Rights Reservered
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>league-sounds-example</artifactId>
+
+    <parent>
+        <groupId>org.jointheleague.resources</groupId>
+        <artifactId>league-sounds-pom</artifactId>
+        <version>0.1.1-SNAPSHOT</version>
+    </parent>
+
+    <scm>
+        <url>https://github.com/JoinTheLeague/league-sounds</url>
+        <connection>scm:git:git://github.com/JoinTheLeague/league-sounds.git</connection>
+        <developerConnection>scm:git:git@github.com:JoinTheLeague/league-sounds.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+     <!--
+     Normally these values (groupId, version) would be inherited from the project e.g. ${groupId}, but as this is an
+     example, they have been hardcoded. Update them as necessary.
+     -->
+    <dependencies>
+        <dependency>
+            <groupId>org.jointheleague.resources</groupId>
+            <artifactId>league-sounds</artifactId>
+            <version>0.1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <resourceBundles>
+                        <resourceBundle>org.jointheleague.resources:league-sounds:0.1.1-SNAPSHOT</resourceBundle>
+                    </resourceBundles>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
