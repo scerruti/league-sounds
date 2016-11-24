@@ -11,6 +11,11 @@ notifications:
 # specify language
 language: java
 
+sudo: false
+
+#build
+script: mvn clean package
+
 # configure which branches to run
 branches:
   # whitelist
