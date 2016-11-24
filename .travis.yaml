@@ -1,1 +1,24 @@
+# Set up notification options
+notifications: 
+  email:
+    recipients:
+      - scerruti@otabi.com
+
+    # change is when the repo status goes from pass to fail or vice versa
+    on_success: change
+    on_failure: always
+
+# specify language
 language: java
+
+sudo: false
+
+#build
+script: mvn clean package
+
+# configure which branches to run
+branches:
+  # whitelist
+  only:
+    - master
+    - mavenize
