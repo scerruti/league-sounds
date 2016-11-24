@@ -1,5 +1,1 @@
 language: java
-# safelist
-branches:
-  only:
-  - mavenize
